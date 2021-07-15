@@ -5,7 +5,7 @@ module.exports.hello = async (event) => {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Hi, Serveless is running!',
+        message: 'Hola! Bienvenido',
         input: event,
       },
       null,
@@ -22,14 +22,25 @@ module.exports.helloUser = async (event) => {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Hola Usuario',
+        message: `Hola! Bienvenido ${event.pathParameters.name}`,
         input: event,
       },
       null,
       2
     ),
   };
+};
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+module.exports.createUser = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: `Hola! Bienvenido ${event.pathParameters.name}`,
+        input: event,
+      },
+      null,
+      2
+    ),
+  };
 };
