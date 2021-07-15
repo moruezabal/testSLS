@@ -1,5 +1,7 @@
 'use strict';
 
+const querystring = require("querystring");
+
 module.exports.hello = async (event) => {
   return {
     statusCode: 200,
@@ -32,12 +34,14 @@ module.exports.helloUser = async (event) => {
 };
 
 module.exports.createUser = async (event) => {
+  const user = querystring.parse(event["body"])
+
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: `Hola! Bienvenido ${event.pathParameters.name}`,
-        input: event,
+        message: "Petición para crear usuarios",
+        input: `Hola ${user.name}`,
       },
       null,
       2

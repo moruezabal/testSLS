@@ -1,5 +1,5 @@
 {
-  "name": "serverlessFramework",
+  "name": "serverlessframework",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -20,5 +20,8 @@
   "devDependencies": {
     "serverless": "^2.52.0",
     "serverless-offline": "^7.0.0"
+  },
+  "dependencies": {
+    "querystring": "^0.2.1"
   }
 }
